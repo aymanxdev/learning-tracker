@@ -39,7 +39,6 @@ graph_params = {
 # print(response.text)
 
 
-
 #TODO:3 Add pixels to the graph
 
 TODAYS_DATE = datetime.today().strftime('%Y%m%d')
@@ -57,3 +56,7 @@ response = requests.post(url=one_pixel_endpoint, json=pixel_graphs, headers=pixe
 response.
 print(response.text)
 
+#TODO:4 Update pixels to the graph
+
+
+#TODO:5 Delete pixels to the graph
