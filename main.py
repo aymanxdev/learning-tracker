@@ -57,6 +57,11 @@ response.
 print(response.text)
 
 #TODO:4 Update pixels to the graph
+pixel_graph_update = {
+    'date': YESTERDAYS_DATE 
+    'quantity': 10
+}
 
+response = requests.post(url=one_pixel_endpoint, json=pixel_graphs, headers=pixel_graph_update)
 
 #TODO:5 Delete pixels to the graph
