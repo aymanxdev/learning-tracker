@@ -57,11 +57,26 @@ response.
 print(response.text)
 
 #TODO:4 Update pixels to the graph
+YESTERDAYS_DATE = input('Please the date you want to update your pixels: YYYYMMDD \n')
+Update_quantity = input('Please enter update value \n')
+update_pixel_endpoint = f'{graph_endpoint}/graph1/{YESTERDAYS_DATE}'
+
 pixel_graph_update = {
-    'date': YESTERDAYS_DATE 
-    'quantity': 10
+    'X-USER-TOKEN': TOKEN,
 }
 
-response = requests.post(url=one_pixel_endpoint, json=pixel_graphs, headers=pixel_graph_update)
+pixel_graph_update_json = {
+    'quantity': Update_quantity
+}
+
+response = requests.put(url=update_pixel_endpoint, json=pixel_graph_update_json, headers=pixel_graph_update)
+response.status_code
+print(response.text)
 
 #TODO:5 Delete pixels to the graph
+
+DATE_TO_DELETE = input('Please enter the date you would like to delete a pixel graph? \n')
+delete_pixel_endpoint = f'{graph_endpoint}/graph1/{DATE_TO_DELETE}'
+
+response = requests.delete(url=delete_pixel_endpoint, headers=pixel_graph_update)
+print(response.text)
